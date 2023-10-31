@@ -67,4 +67,46 @@ public class GenericClass <T>{
     	  return data;
       }
 }
+package generics;
 
+public class GenericClassTest {
+
+	public static void main(String[] args) {
+		GenericClass<String> stringObj=new GenericClass<String>();
+		stringObj.set("Hello");
+		System.out.println(stringObj.get());
+		
+		GenericClass <Integer> personObj=new GenericClass<Integer>();
+		personObj.set(new Integer(21));
+		System.out.println(personObj.get());
+	}
+
+}
+
+package generics;
+
+public class GenericConstructor {
+    private double v;
+    //Generic Constructors
+    public <T extends Number>GenericConstructor(T t){
+    	v=t.doubleValue();
+    }
+    void show() {
+    	System.out.println("Value of v in double type is :"+v);
+    }
+	
+
+}
+package generics;
+
+public class GenericConstructorDemo {
+
+	public static void main(String[] args) {
+		System.out.println("Number to double conversion");
+		GenericConstructor obj=new GenericConstructor(10);
+        obj.show();
+        GenericConstructor obj1=new GenericConstructor(1136.8F);
+        obj1.show();
+	}
+
+}
